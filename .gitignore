@@ -2,7 +2,7 @@
 
 
 #environment
-environment.ts
+environment*
 
 # compiled output
 /dist
