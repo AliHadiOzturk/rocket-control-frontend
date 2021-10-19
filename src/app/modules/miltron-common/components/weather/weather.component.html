@@ -1,0 +1,55 @@
+<mat-card class="rounded-sm" [style.background]="'#eef7fe'" [style.color]="'#000'" [style.width.px]="width">
+    <div class="flex justify-between">
+        <div class="flex flex-col">
+            <span class="text-lg">Rocket Launch Station</span>
+            <span class="text-sm">{{weather?.time | date:"HH:mm"}}</span>
+            <span class="text-sm">{{weather?.time | date:'MMMM d y | EEEE'}}</span>
+            <div class="flex flex-row">
+                <img *ngIf="weather?.precipitation?.hail" class="precipitation" src="assets/images/hail.svg" />
+                <img *ngIf="weather?.precipitation?.rain" class="precipitation" src="assets/images/rain.svg" />
+                <img *ngIf="weather?.precipitation?.sleet" class="precipitation" src="assets/images/sleet.svg" />
+                <img *ngIf="weather?.precipitation?.snow" class="precipitation" src="assets/images/snow.svg" />
+            </div>
+        </div>
+        <div class="flex flex-col justify-between">
+            <div class="flex flex-row">
+                <span class="text-4xl self-center">{{weather?.temperature?.toFixed(2)}}&deg;</span>
+                <div class="border-r-2 border-black mr-2 ml-2"></div>
+                <div>
+                    <!-- <h4>Wind</h4> -->
+                    <div class="flex flex-col">
+                        <img src="assets/images/arrow.svg"
+                            [ngStyle]="{'width':'30px','height':'30px','transform':'rotate('+degree+'deg)'}" />
+                        <div class="flex flex-row">
+                            <div class="flex flex-col">
+                                <span class="text-xs">Speed |&nbsp;</span>
+                                <span class="text-xs">{{weather?.wind?.speed?.toFixed(2)}}</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs">Angle |&nbsp;</span>
+                                <span class="text-xs">{{weather?.wind?.angle?.toFixed(2)}}&angle;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-row ml-2">
+                <div class="flex flex-col">
+                    <span>Humidity |&nbsp;</span>
+                    <span>{{weather?.humidity?.toFixed(2)}}</span>
+                </div>
+                <div class="flex flex-col">
+                    <span>Pressure |&nbsp;</span>
+                    <span>{{weather?.pressure?.toFixed(1)}}</span>
+                </div>
+                <div class="flex flex-col">
+                    <span>Precipitation</span>
+                    <span>{{weather?.precipitation?.probability?.toFixed(2)}}</span>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</mat-card>

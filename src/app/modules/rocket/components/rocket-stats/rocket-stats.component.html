@@ -1,0 +1,26 @@
+<div class="flex flex-col">
+    <!-- <span class="">Stats</span> -->
+    <hr>
+    <div class="grid grid-cols-3 mt-2">
+        <div class="stat">
+            <span>Altitude</span>
+            <span>{{rocket?.altitude?.toFixed(3)}}</span>
+        </div>
+        <div class="stat">
+            <span>Speed</span>
+            <span>{{rocket?.speed?.toFixed(3)}}</span>
+        </div>
+        <div class="stat">
+            <span>Acceleration</span>
+            <span>{{rocket?.acceleration?.toFixed(3)}}</span>
+        </div>
+        <div class="stat">
+            <span>Thrust</span>
+            <span>{{rocket?.thrust}}</span>
+        </div>
+        <div class="stat">
+            <span>Temperature</span>
+            <span>{{rocket?.temperature}}</span>
+        </div>
+    </div>
+</div>

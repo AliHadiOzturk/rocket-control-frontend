@@ -1,0 +1,33 @@
+<mat-card class="rounded-xl bg-opacity-5">
+    <div *ngIf="isWaiting" style="height: 92%;width: 92%;"
+        class="absolute flex self-center items-center justify-center bg-opacity-50 bg-gray-200 z-50">
+        <mat-spinner color="accent"></mat-spinner>
+    </div>
+    <mat-card-header style="margin: 0 !important;">
+        <mat-card-title>
+            <div class="flex flex-row justify-between">
+                {{rocket?.model}}
+                <app-status [status]="rocket?.connectionStatus==='connected' ? true:false"></app-status>
+            </div>
+        </mat-card-title>
+        <mat-card-subtitle class="w-full">
+            <div class="flex justify-between">
+                <span>{{rocket?.id}}</span>
+                <span>{{rocket.status}}</span>
+            </div>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mb-2">Mass: {{rocket?.mass}}</div>
+        <app-rocket-payload [payload]="rocket?.payload!"></app-rocket-payload>
+        <app-rocket-stats [rocket]="rocket"></app-rocket-stats>
+    </mat-card-content>
+    <mat-card-actions [align]="'end'">
+        <button mat-raised-button color="accent" [disabled]="rocket?.statusType!=='waiting'"
+            (click)="launch(rocket)">Launch</button>
+        <button mat-raised-button color="primary" [disabled]="rocket?.statusType!=='launched'"
+            (click)="deploy(rocket)">Deploy</button>
+        <button mat-raised-button color="warn" [disabled]="rocket?.statusType!=='launched'"
+            (click)="cancel(rocket)">Cancel</button>
+    </mat-card-actions>
+</mat-card>
