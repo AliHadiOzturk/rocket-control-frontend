@@ -4,7 +4,7 @@ Frontend project for an rocket launch station. This frontend project showing all
 ## Running Project
 To run this project:
 * You need docker installed.
-* If you don't have angular-cli, install it with `npm install -g @angular/cli
+* If you don't have angular-cli, install it with `npm install -g @angular/cli`
 * Create a `environment.ts` file under `src/environments/`.
     - Then paste.
     ```typescript
