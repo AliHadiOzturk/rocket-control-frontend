@@ -1,27 +1,26 @@
-# MiltronRocketController
+# Miltron Rocket Controller Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+Front-end project for an rocket launch station. This frontend project showing all rocket data from provided [backend service]. This project also have a live data coming from [rocket-controller-backend] via `WebSocket` 
+## Running Project
+To run this project:
+* You need docker installed.
+* If you don't have angular-cli, install it with `npm install -g @angular/cli
+* Create a `environment.ts` file under `src/environments/`.
+    - Then paste.
+    ```typescript
+    export const environment = {
+        production: false,
+        serviceUrl: 'http://127.0.0.1:5000/',
+        wsUrl: 'http://127.0.0.1:5001/',
+        apiKey: 'API_KEY_1'
+    };
+    ```
+* Run [backend service] with docker command `docker run -d  -p 5000:5000 -p 4000-4009:4000-4009 miltronhub/launchsite:1.0.0` Docker will start image in the background and accessible with url http://127.0.0.1:5000/
+* Run [rocket-controller-backend](https://github.com/AliHadiOzturk/rocket-control-backend#running-project) for live data coming with `Web Socket` events.
+* Run `yarn install` for the install packages.
+* Run `yarn start` command for the frontend start. Frontend's default url http://localhost:4200
+ 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[backend service]:https://hub.docker.com/r/miltronhub/launchsite
+[rocket-controller-backend]:https://github.com/AliHadiOzturk/rocket-control-backend
