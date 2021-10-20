@@ -1,6 +1,6 @@
 # Miltron Rocket Controller Frontend
 
-Front-end project for an rocket launch station. This frontend project showing all rocket data from provided [backend service]. This project also have a live data coming from [rocket-controller-backend] via `WebSocket` 
+Frontend project for an rocket launch station. This frontend project showing all rocket data from provided [backend service]. This project also have a live data coming from [rocket-controller-backend] via `WebSocket` 
 ## Running Project
 To run this project:
 * You need docker installed.
